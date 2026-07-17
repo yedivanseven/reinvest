@@ -13,7 +13,7 @@ dependencies = [
     "swak>=1.1.0",
     "dotenv>=0.9",
     "yfinance>=1.4",
-    "justetf-scraping>=0.1",
+    "justetf-scraping @ git+https://github.com/druzsan/justetf-scraping.git",
 ]
 authors = [{name = "yedivanseven", email = "yedivanseven@outlook.de"}]
 description = "Portfolio Optimization through Reinforcement Learning"
