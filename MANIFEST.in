@@ -1,0 +1,16 @@
+prune tests
+prune Notebooks
+prune notebooks
+prune docs
+prune site
+prune dist
+prune .idea
+prune .ruff_cache
+prune *.egg-info
+prune *.dist-info
+prune .github
+prune .ipynb_checkpoints
+prune .claude
+exclude .gitignore .python_version version.env Pipfile Pipfile.lock .env
+exclude .env
+exclude CLAUDE.md

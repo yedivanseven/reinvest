@@ -1,0 +1,29 @@
+name: Lint
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+
+jobs:
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ "3.12", "3.13" , "3.14" ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Set up python ${{ matrix.python-version }}
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install ruff
+        run: pip install ruff
+      - name: Lint src
+        run: ruff check src --verbose
+      - name: Lint tests
+        run: ruff check tests --verbose

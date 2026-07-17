@@ -1,0 +1,88 @@
+[build-system]
+requires = [
+    "setuptools>=82",
+    "setuptools_scm>=9.2",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reinvest"
+dynamic = ["version"]
+requires-python = ">=3.12"
+dependencies = [
+    "swak>=1.1.0",
+    "dotenv>=0.9",
+    "yfinance>=1.4",
+    "justetf-scraping>=0.1",
+]
+authors = [{name = "yedivanseven", email = "yedivanseven@outlook.de"}]
+description = "Portfolio Optimization through Reinforcement Learning"
+readme = "README.md"
+keywords = [
+    "finance",
+    "investment",
+    "reinforcement learning",
+    "neural network",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "License :: OSI Approved :: MIT License",
+]
+
+# [project.urls]
+Repository = "https://github.com/yedivanseven/reinvest"
+Changelog = "https://github.com/yedivanseven/reinvest/blob/main/CHANGELOG.md"
+
+[project.scripts]
+reinvest = "reinvest.main:run"
+
+[tool.setuptools.packages]
+find = {where = ["src"]}
+
+[tool.setuptools_scm]
+version_file = "version.env"
+version_file_template = "SETUPTOOLS_SCM_PRETEND_VERSION={version}"
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.ruff.lint]
+ignore = ["PLR", "A005"]
+select = [
+    "A",
+    "F",
+    "E",
+    "W",
+    "N",
+    "T",
+    "UP",
+    "YTT",
+    "ASYNC",
+    "C4",
+    "T100",
+    "EXE",
+    "ISC",
+    "ICN",
+    "PIE",
+    "PYI",
+    "RSE",
+    "SLOT",
+    "SIM",
+    "INT",
+    "PTH",
+    "PLC",
+    "PLE",
+    "PLW",
+    "NPY",
+    "PERF",
+    "FURB",
+]
