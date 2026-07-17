@@ -35,7 +35,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
 ]
 
-# [project.urls]
+[project.urls]
 Repository = "https://github.com/yedivanseven/reinvest"
 Changelog = "https://github.com/yedivanseven/reinvest/blob/main/CHANGELOG.md"
 
