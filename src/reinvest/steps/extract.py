@@ -1,8 +1,13 @@
-from swak.io import DataFrame2Parquet, JsonWriter, Excel2DataFrame
 from swak.pd import ColumnSelector, ResetIndex, Drop, AsType
 from swak.loggers import StdLogger
 from swak.funcflow.loggers import PassThroughStdLogger
-from swak.funcflow import Pipe, Map, Safe, Fork, SideEffect, Curry
+from swak.funcflow import Pipe, Map, Safe, Fork, SideEffect, Curry, Fallback
+from swak.io import (
+    DataFrame2Parquet,
+    JsonWriter,
+    Excel2DataFrame,
+    Csv2DataFrame
+)
 from ..config import config
 from ..io import (
     wait,
@@ -10,6 +15,7 @@ from ..io import (
     get_etf_chart,
     get_yahoo_ticker_history
 )
+from .logs import universe_cb
 
 __all__ = ['extract']
 
@@ -20,6 +26,13 @@ LOGGER = PassThroughStdLogger(__name__, level=config.log_level)
 write_parquet = DataFrame2Parquet(config.paths.raw_parquet, overwrite=True)
 write_overview = Curry(write_parquet, config.files.overview)
 write_json = JsonWriter(config.paths.raw_json, overwrite=True)
+read_universe = Fallback(
+    [
+        Excel2DataFrame(config.universe),
+        Csv2DataFrame(config.universe)
+    ],
+    callback=LOGGER.warning(universe_cb)
+)
 
 
 pull_overview = Pipe(
@@ -60,7 +73,7 @@ pull_ticker = Pipe(
 
 load_universe = Pipe(
     LOGGER.info('Loading Universe'),
-    Excel2DataFrame(config.universe),
+    read_universe,
     AsType('str'),
     LOGGER.debug('Done loading Universe'),
     Fork(
