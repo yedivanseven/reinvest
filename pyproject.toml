@@ -15,6 +15,7 @@ dependencies = [
     "yfinance>=1.4",
     "cvxpy>=1.9",
     "scipy>=1.18",
+    "exchange_calendars>=4.13",
     "justetf-scraping @ git+https://github.com/druzsan/justetf-scraping.git",
 ]
 authors = [{name = "yedivanseven", email = "yedivanseven@outlook.de"}]
