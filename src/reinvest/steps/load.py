@@ -119,7 +119,7 @@ load = Pipe(
     ),
     LOGGER.info('Joining ETF and Yahoo timeseries'),
     Join(how='outer'),
-    LOGGER.info('Interpolating missing dates in ETF and Yahoo timeseries'),
+    LOGGER.info('Interpolating missing dates in ETF and Yahoo timeseries'),  # ToDo: Maybe we want to _drop_ extra days instead?
     Interpolate('time'),
     write_timeseries,
     LOGGER.info('Done with step "load"')
