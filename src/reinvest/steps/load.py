@@ -14,6 +14,7 @@ from swak.funcflow import (
     SafeError,
     Split
 )
+from ..etl import filter_trading_days
 from ..config import config
 
 __all__ = ['load']
@@ -121,7 +122,8 @@ load = Pipe(
     Join(how='outer'),
     LOGGER.info('Interpolating missing dates in ETF and Yahoo timeseries'),
     Interpolate('time'),
-    # ToDo: Drop non-traiding days with exchange_calendar
+    LOGGER.info('Filtering out non-trading days'),
+    filter_trading_days,
     write_timeseries,
     LOGGER.info('Done with step "load"')
 )

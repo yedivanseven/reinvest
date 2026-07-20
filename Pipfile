@@ -10,7 +10,7 @@ dotenv = "*"
 swak = "*"
 cvxpy = "*"
 scipy = "*"
-exchange-calendars = "*"
+pandas-market-calendars = "*"
 
 [dev-packages]
 jupyter = "*"

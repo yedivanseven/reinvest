@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ceffe07d90dde44ce7080901a61291842db8fd17bc84e472d3279004a42dbe97"
+            "sha256": "d5caa85400622e5fb8e72dc219688bfb73b12b7c66a32c7a840c4efa2a2b3962"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -320,7 +320,6 @@
                 "sha256:a9459425dd64142cd54fbc639847403c7e0c33d60fbc326c94fc1d6bd127f002",
                 "sha256:fc5a2ad0d61b5c3a6539a3061cd4cbb55c59f4a903455cec7926e4b798919996"
             ],
-            "index": "pypi",
             "markers": "python_version >= '3.10' and python_version < '4'",
             "version": "==4.13.2"
         },
@@ -725,6 +724,15 @@
             ],
             "markers": "python_version >= '3.11'",
             "version": "==3.0.3"
+        },
+        "pandas-market-calendars": {
+            "hashes": [
+                "sha256:b02f3a0e9bcb4b9e82a5060bf260ef0060ccd398f989b5e6f8208f4352967806",
+                "sha256:bb2b93b28d496cab173b41c7d120fd5cd9d506b31f3bb0ad3d1d9f2b60d9d9e3"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.10'",
+            "version": "==5.4.0"
         },
         "peewee": {
             "hashes": [
