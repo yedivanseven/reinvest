@@ -8,6 +8,9 @@ yfinance = "*"
 justetf-scraping = {git = "git+https://github.com/druzsan/justetf-scraping.git"}
 dotenv = "*"
 swak = "*"
+cvxpy = "*"
+scipy = "*"
+pandas-market-calendars = "*"
 
 [dev-packages]
 jupyter = "*"
@@ -15,6 +18,7 @@ matplotlib = "*"
 ipympl = "*"
 ruff = "*"
 pandas-stubs = "*"
+scipy-stubs = "*"
 
 [requires]
 python_version = "3.14"

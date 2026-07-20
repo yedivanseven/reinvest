@@ -29,6 +29,7 @@ class YahooTickerHistoryGetter(ArgRepr):
             actions: bool = True,
             auto_adjust: bool = True,
             back_adjust: bool = False,
+            repair: bool = True,
             keepna: bool = False,
             rounding: bool = False,
             timeout: float = 10,
@@ -43,6 +44,7 @@ class YahooTickerHistoryGetter(ArgRepr):
             actions,
             auto_adjust,
             back_adjust,
+            repair,
             keepna,
             rounding,
             timeout,
@@ -56,6 +58,7 @@ class YahooTickerHistoryGetter(ArgRepr):
         self.actions = actions
         self.auto_adjust = auto_adjust
         self.back_adjust = back_adjust
+        self.repair = repair
         self.keepna = keepna
         self.rounding = rounding
         self.timeout = timeout
@@ -84,11 +87,11 @@ class YahooTickerHistoryGetter(ArgRepr):
             actions=self.actions,
             auto_adjust=self.auto_adjust,
             back_adjust=self.back_adjust,
+            repair=self.repair,
             keepna=self.keepna,
             rounding=self.rounding,
             timeout=self.timeout,
             raise_errors=self.raise_errors,
-            repair=False
         )
 
 
