@@ -173,8 +173,8 @@ clean_etfs = Pipe(
     LOGGER.info('Start cleaning ETFs'),
     load_overview,
     Fork(
-        prepend_etfs,
         copy_etfs,
+        prepend_etfs,
         identity
     ),
     RowsSelector(
