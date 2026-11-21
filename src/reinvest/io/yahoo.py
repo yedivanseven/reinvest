@@ -29,7 +29,7 @@ class YahooTickerHistoryGetter(ArgRepr):
             actions: bool = True,
             auto_adjust: bool = True,
             back_adjust: bool = False,
-            repair: bool = True,
+            repair: bool = False,
             keepna: bool = False,
             rounding: bool = False,
             timeout: float = 10,

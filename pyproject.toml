@@ -21,6 +21,8 @@ dependencies = [
 authors = [{name = "yedivanseven", email = "yedivanseven@outlook.de"}]
 description = "Portfolio Optimization through Reinforcement Learning"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 keywords = [
     "finance",
     "investment",
@@ -35,7 +37,6 @@ classifiers = [
     "Programming Language :: Python :: 3.14",
     "Operating System :: POSIX :: Linux",
     "Topic :: Office/Business :: Financial :: Investment",
-    "License :: OSI Approved :: MIT License",
 ]
 
 [project.urls]

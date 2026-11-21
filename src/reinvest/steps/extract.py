@@ -107,10 +107,10 @@ pull_tickers = Pipe(
 
 
 extract = Pipe(
-    LOGGER.info('Starting step "pull"'),
+    LOGGER.info('Starting step "extract"'),
     Fork(
         pull_tickers,
             Pipe(load_universe, pull_etfs)
     ),
-    LOGGER.info('Done with step "pull"')
+    LOGGER.info('Done with step "extract"')
 )
